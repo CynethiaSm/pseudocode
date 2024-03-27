@@ -138,7 +138,7 @@ html, body {
     /* Ensure full width for container */
     .container {
         width: 100%;
-        padding: 0 10px; /* Adjust padding for smaller screens */
+        padding: 0 15px; /* Adjust padding for smaller screens */
     }
 
     /* Stack columns on mobile */
@@ -149,21 +149,16 @@ html, body {
 
     /* Adjust input width */
     .input {
-        width: 100%;
+        width: calc(100% - 30px); /* Adjust input width */
+        margin: 0 auto; /* Center the input */
     }
 
-    /* Adjust title alignment */
-    .title-left,
-    .title-right {
-        text-align: center; /* Align titles to the center */
+    /* Adjust button width */
+    .button {
+        width: calc(100% - 30px); /* Adjust button width */
+        margin: 10px auto; /* Center the button */
     }
-    
-    /* Adjust button alignment */
-    .button-left,
-    .button-right {
-        margin-top: 10px; /* Add space between inputs and buttons */
-    }
-    
+
     /* Adjust placeholder font size */
     #placeholder-left,
     #placeholder-right {
@@ -173,7 +168,8 @@ html, body {
     /* Adjust bottom container */
     .bottom-container {
         flex-direction: column; /* Stack items vertically */
-        margin-top: 50px; /* Increase top margin */
+        margin-top: 30px; /* Adjust top margin */
+        margin-left: 0; /* Remove left margin */
     }
     
     /* Adjust bottom container solo */
@@ -183,8 +179,9 @@ html, body {
     
     /* Adjust card width */
     .card {
-        width: 100%; /* Ensure card takes full width */
+        width: calc(100% - 30px); /* Adjust card width */
         margin-bottom: 20px; /* Add space between cards */
+        margin: 0 auto; /* Center the card */
     }
 }
 
