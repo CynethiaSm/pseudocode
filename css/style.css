@@ -139,24 +139,13 @@ html, body {
     .container {
         width: 100%;
         padding: 0 15px; /* Adjust padding for smaller screens */
+        box-sizing: border-box; /* Include padding in width calculation */
     }
 
-    /* Stack columns on mobile */
-    .column {
-        width: 100%;
-        margin-bottom: 20px; /* Add spacing between stacked columns */
-    }
-
-    /* Adjust input width */
-    .input {
-        width: calc(100% - 30px); /* Adjust input width */
-        margin: 0 auto; /* Center the input */
-    }
-
-    /* Adjust button width */
+    /* Adjust input and button width */
+    .input,
     .button {
-        width: calc(100% - 30px); /* Adjust button width */
-        margin: 10px auto; /* Center the button */
+        width: 100%;
     }
 
     /* Adjust placeholder font size */
@@ -164,24 +153,31 @@ html, body {
     #placeholder-right {
         font-size: 14px; /* Decrease font size for placeholders */
     }
-    
+
     /* Adjust bottom container */
     .bottom-container {
-        flex-direction: column; /* Stack items vertically */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center items horizontally */
         margin-top: 30px; /* Adjust top margin */
-        margin-left: 0; /* Remove left margin */
     }
-    
+
     /* Adjust bottom container solo */
     .bottom-container-solo {
         margin-bottom: 20px; /* Add space between sections */
     }
-    
+
     /* Adjust card width */
     .card {
-        width: calc(100% - 30px); /* Adjust card width */
+        width: 100%; /* Ensure card takes full width */
         margin-bottom: 20px; /* Add space between cards */
-        margin: 0 auto; /* Center the card */
+    }
+
+    /* Adjust alignment in landscape mode */
+    @media only screen and (orientation: landscape) {
+        .bottom-container {
+            margin-top: 10px; /* Reduce top margin in landscape mode */
+        }
     }
 }
 
