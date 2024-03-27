@@ -138,13 +138,13 @@ html, body {
     /* Ensure full width for container */
     .container {
         width: 100%;
-        padding: 0 15px; /* Adjust padding for smaller screens */
+        padding: 0 10px; /* Adjust padding for smaller screens */
     }
 
     /* Stack columns on mobile */
     .column {
         width: 100%;
-        margin-bottom: 30px; /* Increase spacing between stacked columns */
+        margin-bottom: 20px; /* Add spacing between stacked columns */
     }
 
     /* Adjust input width */
@@ -155,7 +155,7 @@ html, body {
     /* Adjust title alignment */
     .title-left,
     .title-right {
-        text-align: left; /* Align titles to the left */
+        text-align: center; /* Align titles to the center */
     }
     
     /* Adjust button alignment */
@@ -174,12 +174,11 @@ html, body {
     .bottom-container {
         flex-direction: column; /* Stack items vertically */
         margin-top: 50px; /* Increase top margin */
-        margin-left: 0; /* Remove left margin */
     }
     
     /* Adjust bottom container solo */
     .bottom-container-solo {
-        margin-bottom: 30px; /* Add space between sections */
+        margin-bottom: 20px; /* Add space between sections */
     }
     
     /* Adjust card width */
