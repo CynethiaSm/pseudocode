@@ -130,6 +130,15 @@ html, body {
 
 /* CSS for mobile devices */
 @media only screen and (max-width: 768px) {
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        overflow-x: hidden; /* Hide horizontal scrollbar */
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    }
+
     /* Center content */
     .centered {
         text-align: center;
@@ -137,7 +146,7 @@ html, body {
 
     /* Ensure full width for container */
     .container {
-        width: 100%;
+        width: 80%;
         padding: 0 15px; /* Adjust padding for smaller screens */
         box-sizing: border-box; /* Include padding in width calculation */
     }
@@ -174,7 +183,9 @@ html, body {
         display: flex;
         flex-direction: column;
         align-items: center; /* Center items horizontally */
+        width: 100px;
         margin-top: 30px; /* Adjust top margin */
+        margin-right: 10px;
     }
 
     /* Adjust bottom container solo */
@@ -184,7 +195,7 @@ html, body {
 
     /* Adjust card width */
     .card {
-        width: 100%; /* Ensure card takes full width */
+        width: 90%; /* Ensure card takes full width */
         margin-bottom: 20px; /* Add space between cards */
     }
 
