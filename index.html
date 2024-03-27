@@ -5,76 +5,161 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>pseudocode help</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
         <link rel="stylesheet" href="css/style.css" title="no title" charset="utf-8">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     </head>
     <body>
         <header id="centered" class="centered">
-            <h1 class="title is-skeleton title is-1 has-text-weight-bold">
+            <h1 class="title is-skeleton title is-1 has-text-weight-bold mt-3">
                 Pseudocode Pro
             </h1>
         </header>
         <main style="display: flex; justify-content: center;">
             <div class="columns columns is-multiline is-centered mt-6 columns is-variable is-1-mobile is-0-tablet is-3-desktop is-3-widescreen is-4-fullhd">
-                <div class="tile box column is-four-fifths pb-2">
-                    <h1 class="title is-skeleton is-5 column is-full ">
-                        Type the overall meaning to your code<br>*Your understanding*
-                    </h1>
-                    <input
-                    class="input is-hovered is-normal "
-                    type="text"
-                    placeholder="What is the logic?"
-                    />
-                    <div class="top-main"></div>
+                <div class="tile box column is-four-fifths pb-2 container">
+                    <div class="container">
+                        <div class="flex-container">
+                            <h1 class="title is-skeleton is-5 mt-5">Type the overall meaning to your code<br><p class="text-small">*Your understanding*</p></h1>
+                            <input class="input is-hovered is-normal" id="inputTopBox" type="text" onkeyup="checkIfEnter(event)" placeholder="What is the logic?" />
+                        </div>
+                        <div id="top-main"></div>
+                    </div>
                 </div>
                 <div class="column is-half pb-6 mt-6">
-                    <h1 class="title is-skeleton is-5 mt-1 ml-2 ">
+                    <h1 class="title title-left is-skeleton is-5 mt-1">
                         Paste or type your code line
                     </h1>
                     <input 
-                    class="input is-focused is-rounded ml-1"
+                    class="input input-left is-focused is-rounded"
+                    id="inputLeftBox"
+                    onkeyup="checkIfEnter(event), checkButtonClick(event)"
                     type="text"
                     placeholder="paste your code"
                     />
-                    <button class="button is-small is-fullwidth is-rounded is-info is-outlined ml-1 mt-1">Paste</button>
+                    <button class="button button-left is-small is-fullwidth is-rounded is-info is-outlined mt-1">Paste</button>
+                    <div class="left-column">
+                        <div class="box">
+                            <code id="placeholder-left">ex. gameObject.SetActive(true);</code>
+                            <div id="leftColumn" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                        </div>
+                    </div>
                 </div>
                 <div class="column is-half pb-6 mt-6">
-                    <h1 class="title is-skeleton is-5 mt-1 ml-3">
+                    <h1 class="title title-right is-skeleton is-5 mt-1">
                         Type The Pseudocode
                     </h1>
                     <input 
-                    class="input is-focused is-rounded ml-1"
+                    class="input input-right is-focused is-rounded"
+                    id="inputRightBox"
+                    onkeyup="checkIfEnter(event), checkButtonClick(event)"
                     type="text"
                     placeholder="pseudocode"
                     />
-                    <button class="button is-small is-fullwidth is-rounded is-info is-outlined ml-1 mt-1">Enter</button>
-                </div>
-                <div class="box column is-half left-list" >
-                <code>left list section</code>
-                </div>
-                <div class="box column is-half right-list">
-                <code>right list section</code>
+                    <button class="button button-right is-small is-fullwidth is-rounded is-info is-outlined mt-1">Enter</button>
+                    <div class="right-column">
+                        <div class="box">
+                            <code id="placeholder-right">ex. Set active state(visibility) of gameObject to true.<br>&nbsp&nbsp&nbsp&nbsp&nbspSet the gameObject to be active&nbsp&nbsp<br>&nbsp&nbsp&nbsp&nbsp&nbspSetVisibilityOfGameObject(true)&nbsp</code>
+                            <div id="rightColumn" ondrop="dropTwo(event)" ondragover="allowDropTwo(event)"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
-        <div class="card m-6 is-hidden" style="width: 500px;">
-            <header class="card-header">
-              <p class="card-header-title">Card header</p>
-              <button class="card-header-icon" aria-label="more options">
-                <span class="icon">
-                  <i class="fas fa-angle-down" aria-hidden="true"></i>
-                </span>
-              </button>
-            </header>
-            <div class="card-content">
-                <div class="content">
-                  Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec
-                  id elit non mi porta gravida at eget metus. Cum sociis natoque penatibus
-                  et magnis dis parturient montes, nascetur ridiculus mus. Cras mattis
-                  consectetur purus sit amet fermentum.
+            <div class="bottom-container">
+                <div class="bottom-container-solo">
+                    <div class="card m-6 " style="width: 500px;">
+                        <header class="card-header">
+                          <p class="card-header-title">References</p>
+                          <button class="card-header-icon angle-button" aria-label="more options">
+                            <span class="icon">
+                              <i class="fas fa-angle-down" aria-hidden="true"></i>
+                            </span>
+                          </button>
+                        </header>
+                        <div class="card-content hidden">
+                            <div class="content">
+                                <h3 class="title is-6 has-text-weight-bold">To access or modify</h3>
+                                <ul>
+                                    <li>Variables</li>
+                                    <li>Constants</li>
+                                    <li>Enums (Enumerations)</li>
+                                    <li>Functions</li>
+                                    <li>Classes</li>
+                                    <li>Structures (Structs)</li>
+                                    <li>Interfaces</li>
+                                    <li>Modules/Imports</li>
+                                    <li>Libraries/Frameworks</li>
+                                    <li>Error/Exception Handling</li>
+                                    <li>Configuration Files</li>
+                                    <li>Database Queries</li>
+                                    <li>APIs (Application Programming Interfaces)</li>
+                                    <li>Event Handlers/Listeners</li>
+                                    <li>Patterns</li>
+                                  </ul>
+                            </div>
+                          </div>
+                      </div>
                 </div>
-              </div>
-          </div>
+                  <div class="bottom-container-solo">
+                      <div class="card m-6 " style="width: 500px;">
+                        <header class="card-header">
+                          <p class="card-header-title">Reading lines of Code</p>
+                          <button class="card-header-icon angle-button" aria-label="more options">
+                            <span class="icon">
+                              <i class="fas fa-angle-down" aria-hidden="true"></i>
+                            </span>
+                          </button>
+                        </header>
+                        <div class="card-content card-content-two hidden">
+                            <div class="content">
+                                <h3 class="title is-6 has-text-weight-bold">A better understanding when reading code</h3>
+                                <ul>
+                                    <li>Identify the Object or Variable: First, identify what the gameObject or variable refers to.</li>
+                                    <li>Action Being Taken: Understand the action being taken on the object. (Understand the Method)</li>
+                                    <li>Parameter: Consider the parameter being passed to the method.</li>
+                                    <li>Purpose: Think about why this action is being taken. Is it related to gameplay mechanics, UI interactions, or something else? Understanding the context can help in grasping the significance of the code.</li>
+                                    <li>Execution Flow: Think about the sequence of events that lead to this line of code being executed. What triggers this code to run? </li>
+                                    <li>Potential Side Effects: Consider any potential side effects or interactions this code might have with other parts of the system. For example, does enabling this object trigger other scripts or behaviors?</li>
+                                    <li>Documentation and Comments: Refer to any documentation or comments in the codebase that explain the purpose and behavior of this line.</li>
+                                    <li>Debugging and Testing: If unsure about the behavior, consider testing or debugging the code to observe its effects at runtime.</li>
+                                </ul>
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="bottom-container-solo">
+                      <div class="card m-6 " style="width: 500px;">
+                        <header class="card-header">
+                          <p class="card-header-title">Most Common</p>
+                          <button class="card-header-icon angle-button" aria-label="more options">
+                            <span class="icon">
+                              <i class="fas fa-angle-down" aria-hidden="true"></i>
+                            </span>
+                          </button>
+                        </header>
+                        <div class="card-content card-content-three hidden">
+                            <div class="content">
+                                <h3 class="title is-6 has-text-weight-bold">--</h3>
+                                <ul>
+                                    <li>NA</li>
+                                    <li>NA</li>
+                                    <li>NA</li>
+                                    <li>NA</li>
+                                    <li>NA</li>
+                                    <li>NA</li>
+                                    <li>NA</li>
+                                    <li>NA</li>
+                                    <li>NA</li>
+                                    <li>NA</li>
+                                    <li>NA</li>
+                                    <li>NA</li>
+                                </ul>
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+            </div>
+            </div>
     </body>
 </html>
