@@ -2,10 +2,136 @@ html, body {
     background-color: rgba(224, 135, 189, 0.3);
     margin: 0;
     padding: 0;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 .centered {
     text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding-right: 300px; /* Add padding instead of margin */
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    margin-top: -20px;
+}
+
+.flex-container > * {
+    min-width: 0; /* Allow items to shrink */
+    flex-shrink: 0; 
+}
+
+#inputTopBox,
+#inputLeftBox,
+#inputRightBox {
+    width: 930px; /* Set a fixed width for the input */
+}
+
+#top-main {
+    margin-top: 10px;
+   /* border: 1px solid #ccc;  Add border for visualization */
+    padding: 10px; /* Add padding for spacing */
+    width: 1300px;
+    overflow-wrap: break-word; /* Wrap long words */
+    word-wrap: break-word; /* Fallback for older browsers */
+}
+
+.column.is-half {
+    flex: 1 1 auto; /* Allow columns to grow and shrink */
+    max-width: calc(43% - 20px); /* Limit maximum width to half the container width minus gap */
+    margin-right: 50px; /* Adjust the gap between columns */
+}
+
+.title-left,
+.input-left {
+    margin-left: -15px; /* Move elements 50px to the left */
+}
+
+.title-right,
+.input-right,
+.button-right {
+    margin-left: -20px; /* Move elements 50px to the left */
+}
+
+.button-left {
+    margin-left: -15px; /* Move elements 50px to the left */
+}
+
+.wrapper {
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);
+    padding: 3px;
+    cursor: grab;
+    display: flex;
+    
+    align-items: center; /* Align items vertically */
+}
+
+.icons-container {
+    display: flex;
+    justify-content: flex-end; /* Position icons at the far right */
+    width: 100%; /* Ensure the container takes up the full width */
+}
+
+.icons-container i {
+    margin-left: 11px;
+    margin-right: 3px;
+}
+
+.bottom-container {
+    display: flex;
+    flex-direction: row;
+    margin-left: 30px;
+    margin-top: 150px;
+}
+
+.bottom-container-solo {
+    display: flex;
+    flex-direction: column;
+}
+
+.left-column,
+.right-column {
+    display: flex;
+    flex-direction: column;
+    margin-top: 45px;
+    margin-right: 10px;
+}
+
+#leftColumn,
+#rightColumn {
+    flex-grow: 1;
+    min-height: 0; /* Allow the columns to shrink */
+}
+
+.drop-highlight {
+    border: 2px solid green; /* Add a border to indicate the drop zone */
+}
+
+.text-small {
+    font-size: 17px;
+    margin-top: 8px;
+}
+
+.hidden {
+    display: none;
+}
+
+.hidden-content {
+    visibility: hidden;
 }
