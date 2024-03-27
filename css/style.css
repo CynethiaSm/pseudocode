@@ -130,14 +130,6 @@ html, body {
 
 /* CSS for mobile devices */
 @media only screen and (max-width: 768px) {
-    html, body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        width: 100%;
-        overflow-x: hidden; /* Hide horizontal scrollbar */
-        box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    }
 
     /* Center content */
     .centered {
