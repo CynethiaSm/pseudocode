@@ -148,6 +148,21 @@ html, body {
         width: 100%;
     }
 
+    .left-column,
+    .right-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center items horizontally */
+        margin-top: 45px;
+        margin-right: 10px;
+    }
+
+    #leftColumn,
+    #rightColumn {
+        flex-grow: 1;
+        min-height: 0; /* Allow the columns to shrink */
+    }
+
     /* Adjust placeholder font size */
     #placeholder-left,
     #placeholder-right {
@@ -173,11 +188,12 @@ html, body {
         margin-bottom: 20px; /* Add space between cards */
     }
 
-    /* Adjust alignment in landscape mode */
-    @media only screen and (orientation: landscape) {
-        .bottom-container {
-            margin-top: 10px; /* Reduce top margin in landscape mode */
-        }
+    /* Set maximum width for sections */
+    .tile.box.column,
+    .column.is-half {
+        width: 100%; /* Set width to 100% */
+        max-width: none; /* Remove maximum width */
+        margin-right: 0; /* Remove right margin */
     }
 }
 
