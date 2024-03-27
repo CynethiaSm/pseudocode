@@ -128,6 +128,21 @@ html, body {
     margin-top: 8px;
 }
 
+/* CSS for mobile devices */
+@media only screen and (max-width: 768px) {
+    /* Adjust column layout for mobile devices */
+    .columns.is-multiline.is-centered {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Adjust the width of the card containers */
+    .bottom-container .bottom-container-solo .card {
+        width: 100%;
+    }
+}
+
 .hidden {
     display: none;
 }
