@@ -130,16 +130,62 @@ html, body {
 
 /* CSS for mobile devices */
 @media only screen and (max-width: 768px) {
-    /* Adjust column layout for mobile devices */
-    .columns.is-multiline.is-centered {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    /* Center content */
+    .centered {
+        text-align: center;
     }
 
-    /* Adjust the width of the card containers */
-    .bottom-container .bottom-container-solo .card {
+    /* Ensure full width for container */
+    .container {
         width: 100%;
+        padding: 0 15px; /* Adjust padding for smaller screens */
+    }
+
+    /* Stack columns on mobile */
+    .column {
+        width: 100%;
+        margin-bottom: 30px; /* Increase spacing between stacked columns */
+    }
+
+    /* Adjust input width */
+    .input {
+        width: 100%;
+    }
+
+    /* Adjust title alignment */
+    .title-left,
+    .title-right {
+        text-align: left; /* Align titles to the left */
+    }
+    
+    /* Adjust button alignment */
+    .button-left,
+    .button-right {
+        margin-top: 10px; /* Add space between inputs and buttons */
+    }
+    
+    /* Adjust placeholder font size */
+    #placeholder-left,
+    #placeholder-right {
+        font-size: 14px; /* Decrease font size for placeholders */
+    }
+    
+    /* Adjust bottom container */
+    .bottom-container {
+        flex-direction: column; /* Stack items vertically */
+        margin-top: 50px; /* Increase top margin */
+        margin-left: 0; /* Remove left margin */
+    }
+    
+    /* Adjust bottom container solo */
+    .bottom-container-solo {
+        margin-bottom: 30px; /* Add space between sections */
+    }
+    
+    /* Adjust card width */
+    .card {
+        width: 100%; /* Ensure card takes full width */
+        margin-bottom: 20px; /* Add space between cards */
     }
 }
 
